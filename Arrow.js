@@ -2,13 +2,13 @@ function miFuncion(){
     console.log('Saludos xD');
 }
 
-miFuncion();
+//miFuncion();
 
 let miArrow = () => {
     console.log('saludos Arrow');
 }
 
-miArrow();
+//miArrow();
 
 //CALLBACK FUNCTIONS
 
@@ -21,17 +21,17 @@ function sumar(op1, op2, funcionCallback){
     funcionCallback('Resultado: ' + res);
 }
 
-sumar(5,3,imprimir);
+//sumar(5,3,imprimir);
 
 //Llamadas asincronas con setTimeout
 function miFuncCallback(){
     console.log('saludo asincrono despues de 3 seg');
 }
 
-setTimeout(miFuncCallback, 3000); //milisegundos equivalente a 3 seg
+//setTimeout(miFuncCallback, 3000); //milisegundos equivalente a 3 seg
 
 
-setTimeout( () => console.log('saludo asincrono 2'), 4000);
+//setTimeout( () => console.log('saludo asincrono 2'), 4000);
 
 
 //PROMESAS
@@ -44,6 +44,17 @@ let miPromesa = new Promise((resolver, rechazar) => {
         rechazar('Se produjo un error');
 });
 
-miPromesa.then(
-    valor
-);
+//miPromesa.then(valor => console.log(valor), error => console.log(error));
+//miPromesa.then( valor => console.log(valor) ).catch( error => console.log(error) );
+
+
+let promesa = new Promise((resolver) => {
+    setTimeout( ()=> resolver('Saludos con promesa y timeout'), 3000);
+});
+
+promesa.then(valor => console.log(valor));
+
+
+
+
+
