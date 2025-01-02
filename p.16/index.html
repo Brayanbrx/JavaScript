@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo DOM con JavaScript</title>
+    <style>
+        .azul{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id='cabecera' class="azul">Ejemplo Dom con JavaScript</h1>
+    <p id='parrafo' class="azul">Saludos!</p>
+    <p id="parrafo2"> Otro parrafo</p>
+
+
+
+<script>
+    //document es todo el html, getElementById devuelve el objeto completo
+    // se usa innerHTML para devolver el valor interno
+    // inner significa interno, recupera el texto que es interno al elemento HTML seleccionado
+    let cabecera = document.getElementById('cabecera'); 
+    let parrafo = document.getElementById('parrafo');
+
+    //console.log('valor cabecera: ' + cabecera.innerHTML);
+    //console.log('Saludos desde JavaScript');
+    //console.log('Informacion del parrafo: ' + parrafo.innerHTML);
+
+    let revision = document.getElementById('cabecera'); //devolver solo el objeto
+    //sin embargo, como devuelve el objeto puedoo usar sus metodos para extraer lo que necesite
+    //console.log( `Revision sin inner: ${revision.innerHTML}` );
+
+    //con innerHTML no solo podemos leer sino modificar, cuando devuelvo en mi variable el objeto
+    //parrafo.innerHTML = 'Nuevo Valor del Parrafo';
+    //cabecera.innerHTML = 'Nueva Cabacera';
+
+    //se puede agarrar todos los elementos u objetos de un tipo especifico, en este ejemplo se toma p
+    let parrafos = document.getElementsByTagName('p');
+    //console.log('No. parrafos ' + parrafos.length)
+    for(let i=0; i<parrafos.length; i++){
+        //console.log(`i: ${i} - ${parrafos[i].innerHTML}`);
+    }
+
+    //Recuperar todos los elementos que tengan una clase en css
+    let elem = document.getElementsByClassName('azul');
+    for(let el of elem){ //for each
+        //console.log(`${el.innerHTML}`);
+    }
+
+    //otra forma de recuperar los elementos con la clase azul con el tipo de elemento p,h1, etc
+    let elem2 = document.querySelectorAll('h1.azul');
+    for(let e of elem2){
+        console.log(`${e.innerHTML}`);
+    }
+
+
+</script>
+
+</body>
+</html>
